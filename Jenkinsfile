@@ -7,7 +7,7 @@ node {
   checkout scm
 
   stage 'Build image'
-  sh("cd sample-app; sudo docker build -t ${imageTag} Dockerfile .")
+  sh("cd sample-app; sudo docker build -t ${imageTag} -f Dockerfile .")
 
   stage 'Run Go tests'
   sh("sudo docker run ${imageTag} go test")
