@@ -10,10 +10,10 @@ node {
   sh("sudo docker build -t ${imageTag} -f sample-app/Dockerfile .")
 
   stage 'Run Go tests'
-  sh("docker run ${imageTag} go test")
+  sh("sudo docker run ${imageTag} go test")
 
   stage 'Push image to registry'
-  sh("gcloud docker -- push ${imageTag}")
+  sh("sudo gcloud docker -- push ${imageTag}")
 
   stage "Deploy Application"
   switch (env.BRANCH_NAME) {
