@@ -1,8 +1,8 @@
 node {
   def project = 'sample'
-  def appName = 'gceme'
+  def appName = 'sample'
   def feSvcName = "${appName}-frontend"
-  def imageTag = "prashantvyas/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
+  def imageTag = "prashantvyas/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
 
   checkout scm
 
