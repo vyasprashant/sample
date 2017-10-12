@@ -13,7 +13,7 @@ node {
   sh("sudo docker run ${imageTag} go test")
 
   stage 'Push image to registry'
-  sh("sudo docker push ${imageTag}")
+  sh("sudo docker login --username=prashantvyas --password=prashant12 ;sudo docker push ${imageTag}")
 
   stage "Deploy Application"
   switch (env.BRANCH_NAME) {
